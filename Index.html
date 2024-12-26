@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Web con Three.js</title>
+ 
+</head>
+<body>
+
+
+  <!-- Three.js Canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script>
+    // Crear la escena, cámara y renderizador
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xFFD700);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Crear un cubo 3D
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshStandardMaterial({ color: 0x743434 });
+    const cube = new THREE.Mesh(geometry, material);
+    cube.scale.set(2, 2, 2);
+    cube.castShadow = true;
+    cube.position.set(1,2,2);
+    scene.add(cube);
+
+    //ligth luces
+    const light = new THREE.DirectionalLight(0xff,1,100)
+    light.position.set(0,1,1); 
+    light.castShadow = true; 
+    scene.add(light);
+
+    //plano - donde se pintan la luces
+    const planeGeometry =  new THREE.PlaneGeometry(20,20,32,32);
+    const planeMaterial =  new THREE.MeshBasicMaterial({ color: 0xfff399 });
+    const plane = new THREE.Mesh(planeGeometry,planeMaterial); 
+    plane.receiveShadow = true; 
+    plane.position.set(0,0,0);
+    scene.add(plane);
+
+
+
+
+    // Posicionar la cámara
+    camera.position.z = 5;
+    camera.position.y = -3;
+    camera.rotation.x = -5;
+    
+  
+
+    // Animar el cubo
+    function animate() {
+      requestAnimationFrame(animate);
+     //cube.rotation.x += 0.01;
+      //cube.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+  
+
+    // Ajustar el tamaño del canvas al redimensionar la ventana
+    window.addEventListener('resize', () => {
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+    });
+  </script>
+</body>
+</html>

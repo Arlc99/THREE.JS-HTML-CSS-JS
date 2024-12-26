@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Fjalla+One&family=Metal+Mania&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rowdies:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #FFD700; /* Color de fondo */
+  font-family: "Familjen Grotesk", serif;
+ 
+
+}
+.form-container {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  margin: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px; /* Ancho fijo para el formulario */
+  height: 400px;
+  z-index: 1; /* Asegurarse de que esté encima del cubo */
+  font-family: "Familjen Grotesk", serif;
+  text-align: center;
+ 
+
+}
+
+
+.contactForm {
+  display: block;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ z-index: 2;
+
+}
+
+ 
+  
+  
+
+.terminos{
+  font-family: "Familjen Grotesk", serif; color:#960b01;
+  text-transform: uppercase;
+  font-size: 15px;
+  display: flex;
+  
+}
+
+
+
+
+h2 {
+  margin: 0 0 10px;
+ /* Centrar el título */
+  font-family: "Familjen Grotesk", serif; color:#960b01;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+}
+
+
+input {
+  display: block;
+  padding: 10px;
+ text-align: center;
+ align-items: center;
+  border: 1px solid #cbc20b;
+  border-radius: 4px;
+  font-family: "Familjen Grotesk", serif;
+  
+ 
+ 
+}
+input:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid #0836ee;
+}
+.contactForm .terminos {
+  display: block;
+  width: 30%;
+  height: 10%;
+  margin-left: 0%;
+  font-family: "Familjen Grotesk", serif;
+}
+.condiciones {
+  display:flex;
+}
+
+#check:hover{
+  box-shadow:5px 5px 5px  #580341;
+}
+
+
+#terminos{
+ text-shadow: 5px 5px 5px rgba(148, 148, 4, 0.5);
+}
+#terminos:hover{
+  text-shadow: 0 0 10px #580341;
+}
+
+button {
+
+  background:linear-gradient(#d01d0c,#e9dc55);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 40%; /* Botón ocupa todo el ancho */
+  font-family: "Familjen Grotesk", serif;
+ 
+}
+button:hover {
+  background:linear-gradient(#b2c509,#960b01);
+  font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+}
+
